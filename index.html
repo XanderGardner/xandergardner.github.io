@@ -99,10 +99,10 @@
     google.charts.load('current', {'packages':['line']});
     google.charts.setOnLoadCallback(drawCharts);
 
-    function drawXanderStyledChart(elementId, chartTitle, chartData, chartThemeColor) {
+    function drawXanderStyledChart(elementId, chartTitle, chartData, chartThemeColor, units) {
       var data = new google.visualization.DataTable();
       data.addColumn('date', 'Week');
-      data.addColumn('number', 'Miles');
+      data.addColumn('number', units);
 
       data.addRows(chartData);
       var options = {
@@ -132,10 +132,10 @@
 
     function drawCharts() {
 
-      drawXanderStyledChart('swim_chart', 'Weekly Swimming Mileage', swim_data, 'gold')
-      drawXanderStyledChart('bike_chart', 'Weekly Biking Mileage', bike_data, 'cyan')
-      drawXanderStyledChart('run_chart', 'Weekly Running Mileage', run_data, 'red')
-      drawXanderStyledChart('cali_chart', 'Weekly Weight Lifted (Lbs)', cali_data, 'magenta')
+      drawXanderStyledChart('swim_chart', 'Weekly Swimming Mileage', swim_data, 'gold', 'Miles')
+      drawXanderStyledChart('bike_chart', 'Weekly Biking Mileage', bike_data, 'cyan', 'Miles')
+      drawXanderStyledChart('run_chart', 'Weekly Running Mileage', run_data, 'red', 'Miles')
+      drawXanderStyledChart('cali_chart', 'Weekly Weight Lifted (Lbs)', cali_data, 'magenta', 'Lbs')
 
     }
   </script>
